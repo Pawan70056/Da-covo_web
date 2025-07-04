@@ -1,107 +1,95 @@
-# React
+![banner2](https://github.com/user-attachments/assets/3171887b-10f3-4b84-8919-bd34677aa0e7)
 
-A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
+## FashionFrenzy
 
-## 🚀 Features
+## Overview 
+FashionFrenzy is an E-Commerce web application developed using MERN stack. It designed to provide a seamless and intuitive online shopping experience for clothes.
 
-- **React 18** - React version with improved rendering and concurrent features
-- **Vite** - Lightning-fast build tool and development server
-- **Redux Toolkit** - State management with simplified Redux setup
-- **TailwindCSS** - Utility-first CSS framework with extensive customization
-- **React Router v6** - Declarative routing for React applications
-- **Data Visualization** - Integrated D3.js and Recharts for powerful data visualization
-- **Form Management** - React Hook Form for efficient form handling
-- **Animation** - Framer Motion for smooth UI animations
-- **Testing** - Jest and React Testing Library setup
+## Features ⚙️
+- <b>User Authentication:</b> Secure user registration and login using JWT authentication.
+- <b>Admin Panel:</b> The platform includes comprehensive features for both users and administrators, ensuring efficient ordering and management processes.
+- <b>Secure Payment:</b>  Integrated with Stripe, the platform ensures secure and swift payment processing. 
+- <b>Responsive Design:</b> The application is designed to be fully responsive, ensuring a seamless experience across all devices. 
 
-## 📋 Prerequisites
+## Tech Stack 🛠️
+- MongoDB Atlas
+- ExpressJS
+- React
+- NodeJS
+- Mongoose
 
-- Node.js (v14.x or higher)
-- npm or yarn
+## How to run the project 🎮
 
-## 🛠️ Installation
+Before running the project, ensure you have the following installed:
+- Node.js (https://nodejs.org/)
+- You can either install MongoDB locally in your system (https://www.mongodb.com/) or you can use cloud based MongoDB Atlas Database (https://www.mongodb.com/products/platform/atlas-database).
 
-1. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-   
-2. Start the development server:
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+### 1. Clone the repository
 
-## 📁 Project Structure
+    git clone https://github.com/RajeevRanjan5642/e-commerce-website.git
+    
+### 2. Install all dependencies
 
-```
-react_app/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components
-│   ├── styles/         # Global styles and Tailwind configuration
-│   ├── App.jsx         # Main application component
-│   ├── Routes.jsx      # Application routes
-│   └── index.jsx       # Application entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
-├── package.json        # Project dependencies and scripts
-├── tailwind.config.js  # Tailwind CSS configuration
-└── vite.config.js      # Vite configuration
-```
+    cd e-commerce-website
+    cd backend
+    npm install
+    cd ../frontend
+    npm install
+    cd ../admin
+    npm install
+    
+### 3. Configure evironment variables:
+  1. Backend:
+    create a .env file and add the following:
 
-## 🧩 Adding Routes
+    PORT = 4000
+    MONGODB_URI = <your-mongodb-connection-string>
+    SECRET_KEY = <your-jwt-secret-key>
+    STRIPE_SECRET_KEY = <your-stripe-secret-key>
+    FRONTEND_URL = http://localhost:3000
+    BACKEND_URL = http://localhost:4000
 
-To add new routes to the application, update the `Routes.jsx` file:
+  3. Frontend:
+    create a .env file and add the following:
 
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
+    REACT_APP_API_URL = http://localhost:4000
 
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
+  3. Admin:
+    create a .env file and add the following:
 
-  return element;
-};
-```
+    REACT_APP_API_URL = http://localhost:4000
+    
+### 3. Run the application locally
+First run the server on a terminal (make sure you are in backend folder)
+    
+    npm run dev
+    
+Open new terminal and run the frontend
 
-## 🎨 Styling
+    cd frontend
+    npm start
+    
+Open new terminal and run admin panel
 
-This project uses Tailwind CSS for styling. The configuration includes:
+    cd admin
+    npm start
+    
+## Usage
+- Create a new user account and log in.
+- Add products through admin panel.
 
-- Forms plugin for form styling
-- Typography plugin for text styling
-- Aspect ratio plugin for responsive elements
-- Container queries for component-specific responsive design
-- Fluid typography for responsive text
-- Animation utilities
+## Deployment
 
-## 📱 Responsive Design
+The site is live at:
 
-The app is built with responsive design using Tailwind CSS breakpoints.
+🔗 https://fashionfrenzy-gamma.vercel.app/
+
+Admin Panel :
+
+🔗 https://fashionfrenzy-admin.vercel.app/
+
+## Project Demo
+https://github.com/user-attachments/assets/0ecad844-b3bf-435e-a53e-00a4b3aa5066
 
 
-## 📦 Deployment
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-## 🙏 Acknowledgments
-
-- Built with [Rocket.new](https://rocket.new)
-- Powered by React and Vite
-- Styled with Tailwind CSS
-
-Built with ❤️ on Rocket.new
