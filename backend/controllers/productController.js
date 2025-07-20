@@ -15,27 +15,33 @@ exports.getAllProducts = async (req, res, next) => {
 };
 
 exports.createProduct = async (req, res, next) => {
-  const products = await Product.find({});
-  const length = products.length;
-  let id = 1;
-  if (length > 0) id = products[length - 1].id + 1;
-  const { name, category, new_price, old_price } = req.body;
   try {
-    // upload image to Cloudinary
-    const result = await cloudinary.uploader.upload(req.file.path);
-    const product = await Product.create({
-      id,
+    const { name, category, new_price, old_price } = req.body;
+
+    if (!req.file) {
+      return res.status(400).json({ success: false, error: "Image is required." });
+    }
+
+    const imagePath = req.file.path;
+
+    // Create and save product
+    const newProduct = new Product({
       name,
-      image: result.secure_url,
       category,
       new_price,
       old_price,
+      image: imagePath,
     });
-    res.status(200).json(product);
+
+    await newProduct.save();
+
+    res.status(201).json({ success: true, message: "Product created", product: newProduct });
   } catch (err) {
+    console.error("❌ Product creation error:", err);
     next(err);
   }
 };
+
 
 exports.deleteProduct = async (req, res, next) => {
   const { id } = req.params;

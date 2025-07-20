@@ -1,0 +1,76 @@
+{
+  "info": {
+    "name": "DaCovo API",
+    "_postman_id": "12345-abcd-67890-efgh",
+    "description": "API requests for DaCovo backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test GET /api/products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/products - Add Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Sample Product",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": "women",
+              "type": "text"
+            },
+            {
+              "key": "new_price",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "old_price",
+              "value": "120",
+              "type": "text"
+            },
+            {
+              "key": "product",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

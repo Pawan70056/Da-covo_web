@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className='navbar'>
             <div className="nav-logo">
                 <img src={logo} alt="" />
-                <p>FashionFrenzy</p>
+                <p>Da'Covo</p>
             </div>
             <img className="nav-hamburger" onClick={hamburger_toggle} src={hamburger} alt="" />
             <ul ref={menuRef} className="nav-menu">
@@ -36,7 +36,7 @@ const Navbar = () => {
                 <li onClick={()=>setMenu("women")}><Link style={{textDecoration: 'none'}} to="/women" className={menu==="women"?"active":""}>Women</Link></li>
                 <li onClick={()=>setMenu("kids")}><Link style={{textDecoration: 'none'}} to="/kids"className={menu==="kids"?"active":""}>Kids</Link></li>
             </ul>
-            <div className="nav-login-cart">
+            <div className="nav-login-cart">    
                 {!localStorage.getItem('token')?<Link to="/login"><button>Login</button></Link>:
                 <div className='navbar-profile'>
                     <img src={profile_icon} alt="" />

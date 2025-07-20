@@ -14,7 +14,7 @@ const NewCollections = () => {
             }
         };
         fetchData();
-    },[]);
+    },[backend_url]);
     return ( 
         <div className="new-collections">
             <h1>NEW COLLECTIONS</h1>

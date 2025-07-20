@@ -34,7 +34,7 @@ const StoreContextProvider = (props) => {
             }
         };
         fetchData();
-    },[])
+    },[backend_url, token]);
 
     const addToCart = async (itemId) =>{
         if (!cartItems[itemId]) {

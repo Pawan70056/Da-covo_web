@@ -1,6 +1,8 @@
-const User = require("./../models/userModel");
+// const User = require("./../models/userModel");
 const jwt = require("jsonwebtoken");
 const validator = require("validator");
+const User = require("../models/User");
+
 const bcrypt = require("bcryptjs");
 const errorHandler = require("../utils/errorHandler");
 
@@ -61,7 +63,7 @@ exports.signupUser = async (req, res, next) => {
 
     // Generate JWT
     const token = jwt.sign({ id: user._id }, getSecretKey(), {
-      expiresIn: "1d",
+      expiresIn: "360d",
     });
 
     res.status(201).json({ success: true, token, role: user.role });
@@ -72,28 +74,16 @@ exports.signupUser = async (req, res, next) => {
 
 // 🔑 Login user
 exports.loginUser = async (req, res, next) => {
-  const { email, password } = req.body;
-
   try {
-    if (!email || !password) {
-      return next(errorHandler(400, "Email and password are required!"));
-    }
+    const { email, password } = req.body;
 
+    // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
-      return next(errorHandler(400, "Invalid login credentials"));
+      return res.status(404).json({ success: false, error: "User not found" });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return next(errorHandler(400, "Invalid login credentials"));
-    }
-
-    const token = jwt.sign({ id: user._id }, getSecretKey(), {
-      expiresIn: "300d",
-    });
-
-    res.status(200).json({ success: true, token, role: user.role });
+    // rest of login logic...
   } catch (err) {
     next(err);
   }
