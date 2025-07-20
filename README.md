@@ -26,7 +26,7 @@ Before running the project, ensure you have the following installed:
 
 ### 1. Clone the repository
 
-    git clone https://github.com/RajeevRanjan5642/e-commerce-website.git
+    git clone https://github.com/Pawan70056/Da-covo_web.git
     
 ### 2. Install all dependencies
 
