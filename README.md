@@ -1,9 +1,9 @@
 ![banner2](https://github.com/user-attachments/assets/3171887b-10f3-4b84-8919-bd34677aa0e7)
 
-## FashionFrenzy
+## Da'covo
 
 ## Overview 
-FashionFrenzy is an E-Commerce web application developed using MERN stack. It designed to provide a seamless and intuitive online shopping experience for clothes.
+Da'covo is an E-Commerce web application developed using MERN stack. It designed to provide a seamless and intuitive online shopping experience for clothes.
 
 ## Features ⚙️
 - <b>User Authentication:</b> Secure user registration and login using JWT authentication.
@@ -88,8 +88,7 @@ Admin Panel :
 
 🔗 https://fashionfrenzy-admin.vercel.app/
 
-## Project Demo
-https://github.com/user-attachments/assets/0ecad844-b3bf-435e-a53e-00a4b3aa5066
+
 
 
 
